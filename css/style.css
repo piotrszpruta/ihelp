@@ -1,0 +1,8 @@
+model-viewer {
+    width: auto;
+    height: 600px;
+}
+
+[data-color=browny] {
+    background-color: #8B4513 !important
+}

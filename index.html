@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>D&D IHelp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+
+</head>
+
+<body>
+    <div class="uk-position-relative uk-background-center-center uk-background-cover" uk-height-viewport>
+        <div class="uk-position-cover uk-cover-container">
+            <video autoplay loop playsinline muted uk-cover>
+                <source src="videos/file.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="uk-position-cover" style="background-color: #00000077;"></div>
+        <nav class="uk-navbar-container uk-navbar-transparent uk-light">
+            <div class="uk-container">
+                <div uk-navbar>
+                    <div class="uk-navbar-left">
+                        <a href="index.html" class="uk-navbar-item uk-logo">
+                            <img src="images/logo2.png" alt="Logo">
+                        </a>
+                    </div>
+                    <div class="uk-navbar-center">
+                        <ul class="uk-navbar-nav uk-visible@m">
+                            <li class="uk-active"><a href="#">Home</a></li>
+                            <li>
+                                <a href="#">Usługi</a>
+                                <div class="uk-navbar-dropdown uk-background-secondary">
+                                    <ul class="uk-nav uk-navbar-dropdown-nav ">
+                                        <li><a href="#">Aplikacje w technologii AR</a></li>
+                                        <li><a href="#">Tworzenie oprogramowania</a></li>
+                                        <li><a href="#">Case Study</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#">O nas</a></li>
+                            <li><a href="#">Kontakt</a></li>
+                        </ul>
+                    </div>
+                    <div class="uk-navbar-right">
+                        <ul class="uk-navbar-nav uk-visible@m">
+                            <li>
+                                <div class="uk-navbar-item">
+                                    <a href="#" class="uk-button uk-button-small uk-button-default">Referencje</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="#offcanvas-menu" class="uk-navbar-toggle uk-hidden@m" uk-navbar-toggle-icon uk-toggle></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="uk-position-relative uk-container uk-container-small uk-flex uk-flex-middle" uk-height-viewport="offset-top: true">
+            <div class="uk-section uk-section-regular uk-width-1-1 uk-light">
+                <div class="uk-flex uk-text-center uk-flex-middle uk-flex-center">
+                    <div class="uk-width-1-1">
+                        <h1 class="uk-heading-small">DOSTARCZAMY NAJWYŻSZEJ JAKOŚCI USŁUGI OD 1991</h1>
+                        <div class="uk-text-lead">Nasza firma działa na rynku od 1991. Posiadamy doświadczenie w tworzeniu indywidualnego oprogramowania dostosowane indywidualnie do klienta.</div>
+                        <div class="uk-margin-large-top">
+                            <p>
+                                <a href="services.html" class="uk-button uk-button-default uk-button-xlarge">Zobacz wszystkie usługi</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="uk-section" style="height: 1000px; background-color: black;">
+        <div class="uk-card-secondary uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin uk-margin-medium-right uk-margin-medium-left" uk-grid style="background-color: #0e0e0e">
+            <div class="uk-card-media-left uk-cover-container">
+                <model-viewer id="color" src="3dmodels/wardrobe.glb" auto-rotate camera-controls ar data-js-focus-visible>
+                    <div class="controls uk-sticky" ,="" id="color-controls">
+                        <button class="uk-button uk-button-secondary" data-color="1,0.5,0,0.5">Pierwszy wariant</button>
+                        <button class="uk-button uk-button-secondary" data-color="0.5,0.5,0.5,0.5">Drugi wariant</button>
+                        <button class="uk-button uk-button-secondary" data-color="1,1,1,1">Powrót do normalnego</button>
+                    </div>
+                </model-viewer>
+                <script>
+                    const modelViewerColor = document.querySelector("model-viewer#color");
+
+                    document.querySelector('#color-controls').addEventListener('click', (event) => {
+                        const colorString = event.target.dataset.color;
+
+                        if (!colorString) {
+                            return;
+                        }
+
+                        const color = colorString.split(',')
+                            .map(numberString => parseFloat(numberString));
+
+                        const [material] = modelViewerColor.model.materials;
+                        console.log(material);
+                        material.pbrMetallicRoughness.setBaseColorFactor(color);
+                    });
+                </script>
+            </div>
+            <div>
+                <div class="uk-card-body">
+                    <h1 class="uk-card-title">Nowe technologie</h1>
+                    <p class="uk-card-subtitle">
+                        Jako firma, która długo już istnieje na rynku nie boimy się nowych technologii. Posiadamy spore doświadczenie w sprzedaży oraz tworzeniu indywidualnych rozwiązań dla naszych klientów.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="uk-section" uk-sticky style="height: auto; color:white; background-color: black;">
+        <hr class="uk-divider-icon">
+        <div class="uk-container">
+            <div class="uk-grid-divider uk-child-width-expand@s " uk-grid>
+                <div>
+                    <span>
+                        D&D iHelp <br>
+                        Rynek 5 <br>
+                        64-100 Leszno <br>
+                        NIP: 697-000-45-56 <br>
+                        tel. 655294215 <br>
+                        mail: kontakt@ihelp.pl<br>
+                    </span>
+                </div>
+                <div>
+                    Item
+                </div>
+                <div>
+                    Item
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</body>
+
+</html>
